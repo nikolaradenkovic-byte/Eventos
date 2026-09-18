@@ -1,0 +1,8 @@
+﻿CREATE PROCEDURE [eventos].[Order_Create]
+AS
+BEGIN
+    SET NOCOUNT ON;
+INSERT INTO eventos.[Order]
+DEFAULT VALUES
+END;
+GO

@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>Database</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{0334606a-5219-4b26-9587-cb36f489a5c4}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.SqlAzureV12DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>Database</RootNamespace>
+    <AssemblyName>Database</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <PermissionSet>UNSAFE</PermissionSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="Tables" />
+    <Folder Include="Schemas" />
+    <Folder Include="Procedures" />
+    <Folder Include="Procedures\EventProcedures" />
+    <Folder Include="Procedures\TicketProcedures" />
+    <Folder Include="Procedures\OrderProcedures" />
+    <Folder Include="Procedures\UserProcedures" />
+    <Folder Include="Procedures\RoleProcedures" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="Tables\Category.sql" />
+    <Build Include="Tables\ControllerMap.sql" />
+    <Build Include="Tables\Order.sql" />
+    <Build Include="Tables\Role.sql" />
+    <Build Include="Tables\Ticket.sql" />
+    <Build Include="Tables\User.sql" />
+    <Build Include="Tables\Event.sql" />
+    <Build Include="Schemas\eventos.sql" />
+    <Build Include="Procedures\OrderProcedures\CreateOrder.sql" />
+    <Build Include="Procedures\TicketProcedures\CreateTicket.sql" />
+    <Build Include="Procedures\UserProcedures\CreateUser.sql" />
+    <Build Include="Procedures\UserProcedures\DeleteUserById.sql" />
+    <Build Include="Procedures\UserProcedures\GetActiveRefreshTokensByUserId.sql" />
+    <Build Include="Procedures\UserProcedures\GetAllUsers.sql" />
+    <Build Include="Procedures\EventProcedures\GetEventByTicketId.sql" />
+    <Build Include="Procedures\EventProcedures\GetEventStatistics.sql" />
+    <Build Include="Procedures\OrderProcedures\GetLatestOrder.sql" />
+    <Build Include="Procedures\TicketProcedures\GetTicketsByOrderId.sql" />
+    <Build Include="Procedures\UserProcedures\GetUserByEmail.sql" />
+    <Build Include="Procedures\UserProcedures\GetUserById.sql" />
+    <Build Include="Procedures\UserProcedures\GetUserRole.sql" />
+    <Build Include="Procedures\OrderProcedures\InsertOrderMap.sql" />
+    <Build Include="Procedures\UserProcedures\RevokeRefreshToken.sql" />
+    <Build Include="Procedures\UserProcedures\SaveRefreshToken.sql" />
+    <Build Include="Procedures\UserProcedures\UpdateUser.sql" />
+    <Build Include="Procedures\RoleProcedures\GetRoleName.sql" />
+    <Build Include="Procedures\RoleProcedures\GetRoleId.sql" />
+    <Build Include="Procedures\RoleProcedures\GetAllRoles.sql" />
+    <Build Include="Procedures\RoleProcedures\ChangeUserRole.sql" />
+    <Build Include="Procedures\RoleProcedures\CreateRole.sql" />
+    <Build Include="Procedures\EventProcedures\CancelEvent.sql" />
+    <Build Include="Procedures\EventProcedures\MyEvents.sql" />
+    <Build Include="Procedures\EventProcedures\GetEventsByCategory.sql" />
+    <Build Include="Procedures\EventProcedures\GetEventControllers.sql" />
+    <Build Include="Procedures\EventProcedures\AvailableControllers.sql" />
+    <Build Include="Procedures\EventProcedures\IsController.sql" />
+    <Build Include="Procedures\EventProcedures\AssignController.sql" />
+    <Build Include="Procedures\EventProcedures\GetEventImage.sql" />
+    <Build Include="Procedures\UserProcedures\GetOrderByUserId.sql" />
+    <Build Include="Procedures\UserProcedures\GetTicketByUserId.sql" />
+    <Build Include="Procedures\EventProcedures\IsEventMine.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="Tables\RefreshTokens.sql" />
+    <Build Include="Procedures\EventProcedures\EventCreate.sql" />
+    <Build Include="Procedures\EventProcedures\EventGetAll.sql" />
+    <Build Include="Procedures\EventProcedures\EventGetById.sql" />
+    <Build Include="Procedures\EventProcedures\EventUpdate.sql" />
+    <Build Include="Procedures\EventProcedures\EventDelete.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="Tables\OrderMap.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="Procedures\TicketProcedures\GetTicketById.sql" />
+    <Build Include="Procedures\TicketProcedures\UseTicket.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="Procedures\EventProcedures\EventGetAllController.sql" />
+  </ItemGroup>
+</Project>

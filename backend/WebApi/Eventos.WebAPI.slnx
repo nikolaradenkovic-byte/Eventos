@@ -1,0 +1,16 @@
+<Solution>
+  <Folder Name="/Core/">
+    <Project Path="Core/Core.csproj" Id="61713c49-771b-4a34-8dd1-fe1d36fbb97c" />
+  </Folder>
+  <Folder Name="/Infrastructure/">
+    <Project Path="Repository/Repository.csproj" Id="59c02af4-7c76-478e-951c-4094f4aa6f05" />
+    <Project Path="Service/Service.csproj" Id="eac43b1b-79ac-4f45-9406-2899bf4ddd6c" />
+  </Folder>
+  <Folder Name="/Persistance/">
+    <Project Path="Database/Database.sqlproj" Id="0334606a-5219-4b26-9587-cb36f489a5c4">
+      <Build />
+      <Deploy />
+    </Project>
+  </Folder>
+  <Project Path="WebApi/WebApi.csproj" />
+</Solution>
