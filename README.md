@@ -6,11 +6,6 @@ Full-stack aplikacija za upravljanje dogadjajima.
 
 ## Tehnologije
 
-### Frontend
-* **Framework:** `React (Vite)`
-* **CSS Framework:** `Tailwind`
-* **HTTP Klijent:** `Axios`
-
 ### Backend
 * **Framework:** `ASP.NET`
 * **ORM:** `Dapper`
@@ -19,4 +14,9 @@ Full-stack aplikacija za upravljanje dogadjajima.
 
 ### Mobile
 * **Framework:** `React Native Expo`
+* **HTTP Klijent:** `Axios`
+
+### Frontend
+* **Framework:** `React (Vite)`
+* **CSS Framework:** `Tailwind`
 * **HTTP Klijent:** `Axios`
